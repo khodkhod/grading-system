@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrap">
+        <h2></h2>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="back">
+            <div class="grading">
+                <marquee behavior="" direction="">Khadeejah grading system</marquee>
+                <input type="number" name="" id="enter"><span><button onclick="checkgrade()">Click here</button></span>
+                <div id="disp"></div>
+            </div>
+        </div>
+        <script>
+      var songFailure=new Audio('Songfail.mp3')
+      var songAverage=new Audio('Songaverage.mp3')
+      var songFair=new Audio('Song fair.mp3')
+      var songGood=new Audio('Song good.mp3')
+      var songExcellent=new Audio('Song excellent.mp3')
+            function checkgrade() {
+                var score = enter.value
+                if(score==""){
+                    disp.innerText="input a number"
+                }else if (score < 0 ) {
+                    disp.innerText = "enter a valid score 🤔"
+                    disp.style.backgroundColor="none"
+                } else if (score >= 0 && score < 40) {
+                    disp.innerText = "Failed 😱"
+                    disp.style.backgroundColor="red"
+                    disp.style.color="white"
+                    songFailure.play()
+                } else if (score >= 40 && score < 50) {
+                    disp.innerText = "Passed 😨"
+                    disp.style.backgroundColor="blue"
+                    disp.style.color="white"
+                    songFair.play()
+                } else if (score >= 50 && score < 65) {
+                    disp.innerText = "Good 😎"
+                    disp.style.backgroundColor="gold"
+                    disp.style.color="white"
+                    songGood.play()
+                } else if (score >= 65 && score < 75) {
+                    disp.innerText = "Very good 😁"
+                    disp.style.backgroundColor="gold"
+                    disp.style.color="white"
+                    songAverage.play()
+                } else if (score >= 75 && score <= 100) {
+                    disp.innerText = "Excellent 😍"
+                    disp.style.backgroundColor="green"
+                    disp.style.color="white"
+                    songExcellent.play()
+                } else {
+                    disp.innerText = "Haba now 😏"
+                }
+            }
+        </script>
+    
+    </div>
+</body>
+</html>
